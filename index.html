@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dornelles Odontologia — Dentista em Videira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#132342; --navy-deep:#0b1626; --sky:#6fa6cd; --sky-soft:#dce9f2;
+    --gold:#b6893f; --cream:#f7f4ec; --cream-2:#efe9db;
+    --ink:#1a2033; --ink-soft:#4b5468; --white:#ffffff;
+    --line:#e2dccb;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+    box-sizing:border-box;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --cream:#efe9dd; --cream-2:#e6dfcf; }
+  }
+  :root[data-theme="dark"]{ --cream:#efe9dd; --cream-2:#e6dfcf; }
+  html{ scroll-padding-top:70px; scroll-behavior:smooth; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img{ max-width:100%; display:block; }
+  h1,h2,h3{ font-family:'Fraunces',serif; font-weight:500; margin:0; color:var(--navy); }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
+  .rule{ width:46px; height:2px; background:var(--gold); border:0; margin:18px 0; }
+
+  /* header */
+  header{ position:sticky; top:0; z-index:50; background:rgba(247,244,236,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top,0px); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:1120px; margin:0 auto; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand img{ width:34px; height:34px; border-radius:50%; }
+  .brand span{ font-family:'Fraunces',serif; font-size:1.05rem; color:var(--navy); letter-spacing:.2px; }
+  nav.links{ display:flex; gap:28px; font-size:.92rem; color:var(--ink-soft); }
+  nav.links a:hover{ color:var(--navy); }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:100px; font-size:.9rem; font-weight:600; }
+  .btn-wa{ background:#25D366; color:#fff; }
+  .btn-wa:hover{ filter:brightness(1.05); }
+  .btn-outline{ border:1px solid var(--sky); color:var(--navy); }
+  .hide-m{ display:inline-flex; }
+  @media(max-width:760px){ nav.links{ display:none; } .hide-m{ display:none; } }
+
+  /* hero */
+  .hero{ background:linear-gradient(160deg,var(--navy) 0%, var(--navy-deep) 100%); color:var(--white); position:relative; overflow:hidden; }
+  .hero .wrap{ display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; padding:76px 28px 64px; }
+  @media(max-width:860px){ .hero .wrap{ grid-template-columns:1fr; padding:44px 24px 40px; } }
+  .eyebrow{ color:var(--sky); font-size:.85rem; letter-spacing:.4px; }
+  .hero h1{ color:#fff; font-size:2.7rem; line-height:1.12; margin-top:10px; }
+  @media(max-width:860px){ .hero h1{ font-size:2.05rem; } }
+  .hero p.lead{ color:#c6d0e0; font-size:1.05rem; line-height:1.6; margin-top:18px; max-width:46ch; }
+  .cta-row{ display:flex; gap:14px; margin-top:30px; flex-wrap:wrap; }
+  .btn-lg{ padding:14px 24px; font-size:.95rem; }
+  .btn-ghost{ border:1px solid rgba(255,255,255,.35); color:#fff; }
+  .frame{ position:relative; }
+  .frame .photo{ border-radius:6px; border:1px solid rgba(182,137,63,.5); overflow:hidden; box-shadow:0 30px 60px -20px rgba(0,0,0,.5); }
+  .badge{ position:absolute; left:-16px; bottom:-18px; background:var(--cream); color:var(--navy); padding:14px 18px; border-radius:6px; box-shadow:0 14px 30px rgba(0,0,0,.25); }
+  .badge b{ font-family:'Fraunces',serif; font-size:1.3rem; display:block; color:var(--gold); }
+  .badge span{ font-size:.72rem; color:var(--ink-soft); }
+  @media(max-width:860px){ .badge{ left:16px; } }
+
+  /* trust bar */
+  .trust{ background:var(--cream-2); border-bottom:1px solid var(--line); }
+  .trust .wrap{ display:flex; padding:22px 28px; gap:0; }
+  .trust p{ flex:1; text-align:center; font-size:.87rem; color:var(--ink-soft); border-left:1px solid var(--line); padding:0 14px; }
+  .trust p:first-child{ border-left:0; }
+  @media(max-width:700px){ .trust .wrap{ flex-direction:column; gap:12px; } .trust p{ border-left:0; border-top:1px solid var(--line); padding-top:12px; } .trust p:first-child{border-top:0;padding-top:0;} }
+
+  section{ padding:84px 0; }
+  .head{ max-width:640px; }
+  .head h2{ font-size:2rem; }
+  .head p{ color:var(--ink-soft); margin-top:14px; line-height:1.65; }
+
+  /* case gallery */
+  .case-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:44px; }
+  @media(max-width:700px){ .case-grid{ grid-template-columns:1fr; } }
+  .case-card{ background:var(--white); border:1px solid var(--line); border-radius:6px; overflow:hidden; }
+  .case-card img{ width:100%; height:230px; object-fit:cover; }
+  .case-cap{ padding:16px 18px; }
+  .case-cap b{ font-size:.85rem; color:var(--navy); }
+  .case-cap span{ font-size:.8rem; color:var(--ink-soft); }
+
+  /* services */
+  .services{ background:var(--navy); color:#fff; }
+  .services .head h2{ color:#fff; }
+  .services .head p{ color:#aebad0; }
+  .svc-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.14); margin-top:44px; border:1px solid rgba(255,255,255,.14); }
+  @media(max-width:860px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .svc-grid{ grid-template-columns:1fr; } }
+  .svc{ background:var(--navy); padding:30px 26px; }
+  .svc svg{ width:26px; height:26px; stroke:var(--sky); }
+  .svc h3{ color:#fff; font-size:1.05rem; margin-top:16px; }
+  .svc p{ color:#aebad0; font-size:.86rem; margin-top:8px; line-height:1.55; }
+
+  /* about */
+  .about .wrap{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center; }
+  @media(max-width:860px){ .about .wrap{ grid-template-columns:1fr; } }
+  .about img{ border-radius:6px; }
+  .about p{ color:var(--ink-soft); line-height:1.7; margin-top:16px; }
+
+  /* location */
+  .loc{ background:var(--cream-2); }
+  .loc .wrap{ display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  @media(max-width:860px){ .loc .wrap{ grid-template-columns:1fr; } }
+  .info-row{ display:flex; gap:14px; padding:16px 0; border-top:1px solid var(--line); }
+  .info-row:first-child{ border-top:0; }
+  .info-row svg{ width:20px; height:20px; stroke:var(--gold); flex-shrink:0; margin-top:2px; }
+  .info-row b{ display:block; font-size:.92rem; color:var(--navy); }
+  .info-row span{ font-size:.87rem; color:var(--ink-soft); }
+  .map-card{ background:var(--navy); border-radius:6px; padding:34px; color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:18px; }
+  .map-card p{ color:#c6d0e0; font-size:.9rem; line-height:1.6; }
+
+  footer{ background:var(--navy-deep); color:#8f9bb3; padding:48px 0 calc(28px + env(safe-area-inset-bottom,0px)); }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:center; }
+  footer .brand span{ color:#fff; }
+  footer small{ font-size:.78rem; }
+
+  .fab{ position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px)); background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px rgba(0,0,0,.28); z-index:60; }
+  .fab svg{ width:28px; height:28px; fill:#fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABaAFoDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAIDAQQFBgf/xAAuEAACAgEDAgQFAwUAAAAAAAAAAQIDEQQSIRMxBUFRYQYiMnGhI1KRU4HB0fD/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/EAB4RAQEAAQQDAQAAAAAAAAAAAAABEQIhIkExMmFx/9oADAMBAAIRAxEAPwDyAAPa4AAAAAAAAAAAAAAAAAAAAHSq8C8Tu8Kl4nVpJT0sW/mT5wu7x3x7i3A5oOnX4Lq1Rp9RqaLqaNTYq67HFNNvtxnODnTjsslHKltbWV2Y+neEQAAAAAAAZSbaS5b4RsPQ6td6J/j3/wBMpqh1LYQzjdJLPoXbF0+s77Ok+OF82eeMZ/ySqv8ADdJXPV306q6rT3Qqk6uvLbB2cYTflw2/uke++HfGtP4d8O1aWyUb9RplJSVE1OKWW03LsuD59HQuaUnbLEmlv25WHjHn357exPSxvoru6d0oxsg4yUEnujlcrLXqSzTq9i2ycXe+LfGtRqKaYKyMFbmca6/pjHHfPm3nv9+x5arTX3LNNU5rOPlX/eqJShKc4KVjl+lui5eSSeF+CUIOGnjarZw3NrjssNd+c/g1ceIzpl7U2Vzqltsg4ywnh+jIFupg4WY3SmscSl5r25fBUFAAAAAEq3JWRcOJZW37mylc25Rtra+jGPlbz2xjHc1Czr2vP6kueC7dpc9L4x1MptxtTnHLazynw8ffhfwEraq9ruhsjnKksqPKz3Xrg13bY0k5ywvcdWzdu3vPPP37jY5L27oTUZThHbFvO1cLLXp257e5mUb9u1uHm0lFcL1Txx2KOvb+98Dr2/1JcvPcbHJLUq1WJXNZSWMJJL+P7lJKU5T+uTlj1eSJF/QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyVX/2Q==" alt="Dornelles Odontologia">
+      <span>Dornelles Odontologia</span>
+    </div>
+    <nav class="links">
+      <a href="#servicos">Serviços</a>
+      <a href="#casos">Casos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#local">Contato</a>
+    </nav>
+    <a class="btn btn-wa hide-m" href="https://wa.me/554935660477?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Dornelles%20Odontologia." target="_blank" rel="noopener">Agendar consulta</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Dornelles Odontologia · Desde 1969</p>
+      <h1>Cuidado odontológico com tradição de família em Videira</h1>
+      <p class="lead">Da clínica geral à reabilitação com implantes, atendimento próximo e cuidadoso para toda a sua família — no coração de Videira, SC.</p>
+      <div class="cta-row">
+        <a class="btn btn-wa btn-lg" href="https://wa.me/554935660477?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Dornelles%20Odontologia." target="_blank" rel="noopener">
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-ghost btn-lg" href="tel:+554935660477">(49) 3566-0477</a>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="photo"><img src="data:image/jpeg;base64,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" alt="Equipe Dornelles Odontologia"></div>
+      <div class="badge"><b>1969</b><span>ano de fundação</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <p>Atendimento humanizado e de proximidade</p>
+    <p>Tecnologia em prótese e implantes</p>
+    <p>Tradição familiar desde 1969</p>
+  </div>
+</div>
+
+<section id="casos">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow" style="color:var(--gold)">Casos realizados</p>
+      <h2>Reabilitação que devolve o sorriso</h2>
+      <p>Um exemplo de prótese sobre implantes desenvolvida em nosso consultório — precisão técnica e resultado natural.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card">
+        <img src="data:image/jpeg;base64,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" alt="Prótese superior sobre implantes">
+        <div class="case-cap"><b>Prótese sobre implantes</b><br><span>Arcada superior — vista intraoral</span></div>
+      </div>
+      <div class="case-card">
+        <img src="data:image/jpeg;base64,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" alt="Prótese finalizada">
+        <div class="case-cap"><b>Peça finalizada</b><br><span>Acabamento e estética natural</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">O que tratamos</p>
+      <h2>Serviços</h2>
+      <p>Atendimento completo em odontologia, do check-up de rotina aos tratamentos mais complexos.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21c-2-3-3-6-3-9a3 3 0 0 1 6 0c0 3-1 6-3 9z"/><path d="M12 3c1.5-1 4-1.4 5.5 0 1.6 1.5 1.4 4-.2 6"/><path d="M12 3c-1.5-1-4-1.4-5.5 0-1.6 1.5-1.4 4 .2 6"/></svg>
+        <h3>Implantodontia</h3><p>Reposição de dentes com implantes de alta previsibilidade.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+        <h3>Prótese dentária</h3><p>Próteses fixas e removíveis com acabamento natural.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Clínica geral</h3><p>Diagnóstico, restaurações e prevenção para toda a família.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 12c2-4 5-6 8-6s6 2 8 6c-2 4-5 6-8 6s-6-2-8-6z"/><circle cx="12" cy="12" r="2"/></svg>
+        <h3>Estética do sorriso</h3><p>Clareamento e harmonização para um sorriso mais confiante.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <h3>Ortodontia</h3><p>Alinhamento dental com acompanhamento próximo.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3>Prevenção</h3><p>Limpeza, profilaxia e cuidados contínuos com a saúde bucal.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABaAFoDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAIDAQQFBgf/xAAuEAACAgEDAgQFAwUAAAAAAAAAAQIDEQQSIRMxBUFRYQYiMnGhI1KRU4HB0fD/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/EAB4RAQEAAQQDAQAAAAAAAAAAAAABEQIhIkExMmFx/9oADAMBAAIRAxEAPwDyAAPa4AAAAAAAAAAAAAAAAAAAAHSq8C8Tu8Kl4nVpJT0sW/mT5wu7x3x7i3A5oOnX4Lq1Rp9RqaLqaNTYq67HFNNvtxnODnTjsslHKltbWV2Y+neEQAAAAAAAZSbaS5b4RsPQ6td6J/j3/wBMpqh1LYQzjdJLPoXbF0+s77Ok+OF82eeMZ/ySqv8ADdJXPV306q6rT3Qqk6uvLbB2cYTflw2/uke++HfGtP4d8O1aWyUb9RplJSVE1OKWW03LsuD59HQuaUnbLEmlv25WHjHn357exPSxvoru6d0oxsg4yUEnujlcrLXqSzTq9i2ycXe+LfGtRqKaYKyMFbmca6/pjHHfPm3nv9+x5arTX3LNNU5rOPlX/eqJShKc4KVjl+lui5eSSeF+CUIOGnjarZw3NrjssNd+c/g1ceIzpl7U2Vzqltsg4ywnh+jIFupg4WY3SmscSl5r25fBUFAAAAAEq3JWRcOJZW37mylc25Rtra+jGPlbz2xjHc1Czr2vP6kueC7dpc9L4x1MptxtTnHLazynw8ffhfwEraq9ruhsjnKksqPKz3Xrg13bY0k5ywvcdWzdu3vPPP37jY5L27oTUZThHbFvO1cLLXp257e5mUb9u1uHm0lFcL1Txx2KOvb+98Dr2/1JcvPcbHJLUq1WJXNZSWMJJL+P7lJKU5T+uTlj1eSJF/QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyVX/2Q==" alt="Dornelles Odontologia" style="width:120px;border-radius:16px;justify-self:start;">
+    <div>
+      <p class="eyebrow" style="color:var(--gold)">Nossa história</p>
+      <h2>Uma tradição odontológica desde 1969</h2>
+      <hr class="rule">
+      <p>A Dornelles Odontologia carrega décadas de dedicação ao cuidado bucal da comunidade de Videira, unindo experiência de família à atualização constante em técnicas e materiais.</p>
+      <p>Hoje, a nova geração da clínica mantém esse compromisso com um atendimento próximo, técnico e acolhedor — pensado para que cada paciente se sinta em casa.</p>
+    </div>
+  </div>
+</section>
+
+<section class="loc" id="local">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" style="color:var(--gold)">Visite-nos</p>
+      <h2>Localização e horários</h2>
+      <div style="margin-top:22px">
+        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 22s7-7.5 7-13a7 7 0 0 0-14 0c0 5.5 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><b>Endereço</b><span>Rua XV de Novembro, 280 — Centro, Videira/SC, 89560-132</span></div></div>
+        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div><b>Horário</b><span>Segunda a sexta, até às 18h · confirme horários pelo WhatsApp</span></div></div>
+        <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+          <div><b>Telefone</b><span>(49) 3566-0477</span></div></div>
+      </div>
+    </div>
+    <div class="map-card">
+      <h3 style="color:#fff">Como chegar</h3>
+      <p>Estamos na Rua XV de Novembro, no centro de Videira. Toque abaixo para abrir o trajeto no mapa ou fale conosco agora pelo WhatsApp.</p>
+      <a class="btn btn-outline" style="border-color:var(--sky);color:#fff" href="https://www.google.com/maps/search/?api=1&query=Rua+XV+de+Novembro+280+Videira+SC" target="_blank" rel="noopener">Abrir no mapa →</a>
+      <a class="btn btn-wa" href="https://wa.me/554935660477?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCABaAFoDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAIDAQQFBgf/xAAuEAACAgEDAgQFAwUAAAAAAAAAAQIDEQQSIRMxBUFRYQYiMnGhI1KRU4HB0fD/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQIDBP/EAB4RAQEAAQQDAQAAAAAAAAAAAAABEQIhIkExMmFx/9oADAMBAAIRAxEAPwDyAAPa4AAAAAAAAAAAAAAAAAAAAHSq8C8Tu8Kl4nVpJT0sW/mT5wu7x3x7i3A5oOnX4Lq1Rp9RqaLqaNTYq67HFNNvtxnODnTjsslHKltbWV2Y+neEQAAAAAAAZSbaS5b4RsPQ6td6J/j3/wBMpqh1LYQzjdJLPoXbF0+s77Ok+OF82eeMZ/ySqv8ADdJXPV306q6rT3Qqk6uvLbB2cYTflw2/uke++HfGtP4d8O1aWyUb9RplJSVE1OKWW03LsuD59HQuaUnbLEmlv25WHjHn357exPSxvoru6d0oxsg4yUEnujlcrLXqSzTq9i2ycXe+LfGtRqKaYKyMFbmca6/pjHHfPm3nv9+x5arTX3LNNU5rOPlX/eqJShKc4KVjl+lui5eSSeF+CUIOGnjarZw3NrjssNd+c/g1ceIzpl7U2Vzqltsg4ywnh+jIFupg4WY3SmscSl5r25fBUFAAAAAEq3JWRcOJZW37mylc25Rtra+jGPlbz2xjHc1Czr2vP6kueC7dpc9L4x1MptxtTnHLazynw8ffhfwEraq9ruhsjnKksqPKz3Xrg13bY0k5ywvcdWzdu3vPPP37jY5L27oTUZThHbFvO1cLLXp257e5mUb9u1uHm0lFcL1Txx2KOvb+98Dr2/1JcvPcbHJLUq1WJXNZSWMJJL+P7lJKU5T+uTlj1eSJF/QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyVX/2Q==" style="width:30px;height:30px;border-radius:50%;" alt=""><span>Dornelles Odontologia</span></div>
+    <small>© 2026 Dornelles Odontologia · Rua XV de Novembro, 280, Videira/SC · (49) 3566-0477</small>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/554935660477?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.8.8 5.4 2.2 7.6L2 30l6.6-2.1C10.7 29.1 13.3 30 16 30c7.7 0 14-6.3 14-14S23.7 2 16 2zm7.9 20.1c-.3.9-1.9 1.7-2.6 1.8-.7.1-1.5.2-4.9-1-4.1-1.6-6.8-5.8-7-6.1-.2-.3-1.6-2.2-1.6-4.2 0-2 1-2.9 1.4-3.3.4-.4.9-.5 1.2-.5h.9c.3 0 .7 0 1 .8.4 1 1.3 3.3 1.4 3.5.1.2.2.5 0 .8-.1.3-.2.5-.4.7-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.7 2.2 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.1.9-.1.3-.3 1.1-1.3 1.4-1.7.3-.4.5-.4.9-.2.4.1 2.6 1.2 3 1.5.4.2.7.3.8.5.1.2.1.9-.2 1.8z"/></svg>
+</a>
+
+</body>
+</html>
